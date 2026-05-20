@@ -1,0 +1,27 @@
+name: Daily Weather Email — Taunsa DG Khan
+
+on:
+  schedule:
+    # PKT subah 6 baje = UTC raat 1 baje
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  send-weather-email:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pytz
+
+      - name: Send weather email
+        env:
+          SENDER_EMAIL:    ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+          RECEIVER_EMAIL:  ${{ secrets.RECEIVER_EMAIL }}
+        run: python weather_email.py
