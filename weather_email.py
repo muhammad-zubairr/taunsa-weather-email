@@ -230,16 +230,16 @@ def build_email(data):
         dw = round(daily["wind_speed_10m_max"][i])
         fc_html += f"""
         <div style="background:rgba(0,255,200,0.06);border:1px solid rgba(0,255,200,0.22);
-                    border-radius:20px;padding:20px 12px;text-align:center;flex:1;">
+                    border-radius:20px;padding:20px 12px;flex:1;">
           <div style="color:#00ffcc;font-size:14px;font-weight:700;margin-bottom:3px;">{urdu_day(d_str)}</div>
-          <div style="color:#334455;font-size:11px;margin-bottom:10px;">{urdu_date(d_str)}</div>
+          <div style="color:#ffffff;font-size:11px;margin-bottom:10px;">{urdu_date(d_str)}</div>
           <div style="font-size:38px;margin-bottom:8px;">{fe}</div>
-          <div style="color:#7799aa;font-size:12px;margin-bottom:10px;">{fd}</div>
+          <div style="color:#ffffff;font-size:12px;margin-bottom:10px;">{fd}</div>
           <div style="color:{temp_color(dm)};font-size:22px;font-weight:900;">{dm}°</div>
-          <div style="color:#334455;font-size:12px;margin-bottom:8px;">{dn}°</div>
+          <div style="color:#ffffff;font-size:12px;margin-bottom:8px;">{dn}°</div>
           <div style="height:1px;background:rgba(0,255,200,0.12);margin-bottom:8px;"></div>
           <div style="color:#00aaff;font-size:11px;">💧 {dr}%</div>
-          <div style="color:#334455;font-size:11px;margin-top:3px;">💨 {dw} km/h</div>
+          <div style="color:#ffffff;font-size:11px;margin-top:3px;">💨 {dw} km/h</div>
         </div>"""
 
     # Warnings HTML
@@ -255,7 +255,7 @@ def build_email(data):
               <div style="color:{wcolor};font-size:14px;font-weight:700;margin-bottom:4px;">
                 {wlevel} {wtitle}
               </div>
-              <div style="color:#8899aa;font-size:13px;line-height:1.8;">{wtext}</div>
+              <div style="color:#ffffff;font-size:13px;line-height:1.8;">{wtext}</div>
             </div>"""
         warn_html = f"""
         <div style="background:linear-gradient(135deg,#1a0808,#180c04);
@@ -287,35 +287,35 @@ def build_email(data):
 
   <!-- HEADER -->
   <div class="card" style="background:linear-gradient(135deg,#020c1e,#041428);
-       border:1px solid rgba(0,255,200,0.2);text-align:center;">
+       border:1px solid rgba(0,255,200,0.2);">
     <div style="font-size:60px;filter:drop-shadow(0 0 20px rgba(0,255,200,0.5));margin-bottom:8px;">{emoji}</div>
     <div style="color:#00ffcc;font-size:24px;font-weight:700;margin-bottom:6px;">روزانہ موسم رپورٹ</div>
     <div class="glow"></div>
     <div style="color:#00aaff;font-size:14px;margin-bottom:4px;">📍 {CITY_NAME}</div>
-    <div style="color:#334455;font-size:13px;">📅 {urdu_day(today_str)} — {urdu_date(today_str)} &nbsp;|&nbsp; 🕕 {report_time}</div>
+    <div style="color:#ffffff;font-size:13px;">📅 {urdu_day(today_str)} — {urdu_date(today_str)} &nbsp;|&nbsp; 🕕 {report_time}</div>
   </div>
 
   <!-- TEMP -->
   <div class="card" style="background:linear-gradient(135deg,#030f20,#050c18);
-       border:1px solid rgba(0,180,255,0.15);text-align:center;">
+       border:1px solid rgba(0,180,255,0.15);">
     <div style="color:#556677;font-size:13px;margin-bottom:4px;">{desc}</div>
     <div style="font-size:95px;font-weight:900;line-height:1;
                 background:linear-gradient(180deg,#00ffcc,#00aaff);
                 -webkit-background-clip:text;-webkit-text-fill-color:transparent;
                 filter:drop-shadow(0 0 25px rgba(0,220,200,0.3));">{cur_temp}°C</div>
-    <div style="color:#334455;font-size:13px;margin-top:6px;">
+    <div style="color:#ffffff;font-size:13px;margin-top:6px;">
       محسوس: <span style="color:#00ccaa;font-weight:700;">{feels}°C</span>
     </div>
     <div class="glow" style="margin:14px 50px;"></div>
     <div style="display:flex;justify-content:center;gap:30px;">
       <div>
         <div style="color:#ff5555;font-size:26px;font-weight:900;">{max_t}°C</div>
-        <div style="color:#223344;font-size:11px;">زیادہ سے زیادہ</div>
+        <div style="color:#ffffff;font-size:11px;">زیادہ سے زیادہ</div>
       </div>
       <div style="width:1px;background:rgba(0,255,200,0.1);"></div>
       <div>
         <div style="color:#4499ff;font-size:26px;font-weight:900;">{min_t}°C</div>
-        <div style="color:#223344;font-size:11px;">کم سے کم</div>
+        <div style="color:#ffffff;font-size:11px;">کم سے کم</div>
       </div>
     </div>
   </div>
@@ -324,25 +324,25 @@ def build_email(data):
   <div style="background:#030f20;border:1px solid rgba(0,255,200,0.1);
               border-radius:20px;margin-bottom:16px;overflow:hidden;">
     <div style="display:flex;">
-      <div style="flex:1;text-align:center;padding:18px 8px;border-left:1px solid rgba(0,255,200,0.08);">
+      <div style="flex:1;padding:18px 8px;border-left:1px solid rgba(0,255,200,0.08);">
         <div style="font-size:24px;margin-bottom:5px;">💧</div>
         <div style="color:#00ffcc;font-size:20px;font-weight:800;">{humidity}%</div>
-        <div style="color:#223344;font-size:11px;margin-top:3px;">نمی</div>
+        <div style="color:#ffffff;font-size:11px;margin-top:3px;">نمی</div>
       </div>
-      <div style="flex:1;text-align:center;padding:18px 8px;border-left:1px solid rgba(0,255,200,0.08);">
+      <div style="flex:1;padding:18px 8px;border-left:1px solid rgba(0,255,200,0.08);">
         <div style="font-size:24px;margin-bottom:5px;">💨</div>
         <div style="color:#00ffcc;font-size:20px;font-weight:800;">{wind}</div>
-        <div style="color:#223344;font-size:11px;margin-top:3px;">km/h ہوا</div>
+        <div style="color:#ffffff;font-size:11px;margin-top:3px;">km/h ہوا</div>
       </div>
-      <div style="flex:1;text-align:center;padding:18px 8px;border-left:1px solid rgba(0,255,200,0.08);">
+      <div style="flex:1;padding:18px 8px;border-left:1px solid rgba(0,255,200,0.08);">
         <div style="font-size:24px;margin-bottom:5px;">💨🌪️</div>
         <div style="color:#00ffcc;font-size:20px;font-weight:800;">{gusts}</div>
-        <div style="color:#223344;font-size:11px;margin-top:3px;">km/h جھونکے</div>
+        <div style="color:#ffffff;font-size:11px;margin-top:3px;">km/h جھونکے</div>
       </div>
-      <div style="flex:1;text-align:center;padding:18px 8px;">
+      <div style="flex:1;padding:18px 8px;">
         <div style="font-size:24px;margin-bottom:5px;">🌧️</div>
         <div style="color:#00ffcc;font-size:20px;font-weight:800;">{rain_p}%</div>
-        <div style="color:#223344;font-size:11px;margin-top:3px;">بارش امکان</div>
+        <div style="color:#ffffff;font-size:11px;margin-top:3px;">بارش امکان</div>
       </div>
     </div>
   </div>
@@ -360,22 +360,22 @@ def build_email(data):
   <div style="background:linear-gradient(135deg,rgba(0,30,20,0.98),rgba(0,20,40,0.98));
               border:1px solid rgba(0,255,200,0.2);border-radius:22px;padding:26px;margin-bottom:16px;">
     <div style="color:#00ffcc;font-size:16px;font-weight:700;margin-bottom:4px;">🧠 موسمی خلاصہ</div>
-    <div style="color:#334455;font-size:12px;margin-bottom:14px;">ماہرانہ تجزیہ بمطابق Open-Meteo موسمی ڈیٹا</div>
+    <div style="color:#ffffff;font-size:12px;margin-bottom:14px;">ماہرانہ تجزیہ بمطابق Open-Meteo موسمی ڈیٹا</div>
     <div class="glow" style="margin:0 0 16px 0;"></div>
 
-    <p style="color:#8899aa;font-size:14px;line-height:2.4;margin-bottom:14px;">{para1}</p>
-    <p style="color:#8899aa;font-size:14px;line-height:2.4;margin-bottom:16px;">{para2}</p>
+    <p style="color:#ffffff;font-size:14px;line-height:2.4;margin-bottom:14px;">{para1}</p>
+    <p style="color:#ffffff;font-size:14px;line-height:2.4;margin-bottom:16px;">{para2}</p>
 
     <div style="background:rgba(0,255,200,0.04);border:1px solid rgba(0,255,200,0.12);
                 border-radius:14px;padding:14px 16px;">
       <div style="color:#00aaff;font-size:13px;font-weight:700;margin-bottom:10px;">📌 آج کے لیے مشورے</div>
-      <div style="color:#667788;font-size:13px;line-height:2.2;">{advice_html}</div>
+      <div style="color:#ffffff;font-size:13px;line-height:2.2;">{advice_html}</div>
     </div>
 
     <div style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(0,255,200,0.08);
                 display:flex;justify-content:space-between;">
-      <span style="color:#1a2a3a;font-size:11px;">📡 Open-Meteo موسمی سروس</span>
-      <span style="color:#1a2a3a;font-size:11px;">🤖 خودکار رپورٹ</span>
+      <span style="color:#ffffff;font-size:11px;">📡 Open-Meteo موسمی سروس</span>
+      <span style="color:#ffffff;font-size:11px;">🤖 خودکار رپورٹ</span>
     </div>
   </div>
 
